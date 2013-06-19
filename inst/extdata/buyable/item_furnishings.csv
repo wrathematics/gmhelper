@@ -1,0 +1,56 @@
+Itemtype;Furnishings ;Cost ;Unit;Weight 
+;Padded Armchair;3;gp;40
+;Wooden Armchair;1;gp;30
+;Double Bed;8;gp;150
+;Single Bed;5;gp;90
+;Padded Bench;4;gp;20
+;Wooden Bench;2;gp;15
+;4'x 1'x 5' Metal Bookcase;15;gp;250
+;4'x 1'x 5 Wooden Bookcase;5;gp;100
+;Pewter Bowl;2;sp;1.5
+;Pottery Bowl;5;cp;1.5
+;Silver Bowl;9;gp;1.5
+;Buffet ;7;gp;5
+;Cabinet ;4;gp;80
+square yard;Carpet ;5;cp;2
+;Padded Chair;2;gp;25
+;Wooden Chair;1;gp;18
+;Chandelier ;20;gp;30
+;Chest of drawers ;6;gp;70
+;Pewter Cup;2;sp;0.5
+;Pottery Cup;4;cp;0.4
+;Silver Cup;2;ep;0.5
+square yard;Curtains/drapes ;3;sp;1
+;Cushion ;1;sp;1
+piece;Copper Cutlery;1;sp;0.5
+piece;Pewter Cutlery;2;sp;0.5
+piece;Silver Cutlery;5;gp;0.5
+;Crystal Decanter;10;gp;6
+;Pottery Decanter;3;cp;5.5
+;Silver Decanter;5;gp;6
+;Desk ;15;gp;35
+;Crystal Goblet;4;gp;1
+;Pewter Goblet;4;sp;1
+;Silver Goblet;2;ep;1
+;Hamper ;8;cp;4
+;Iron Kettle;4;gp;2
+;Loom ;6;gp;200
+;Mat ;15;cp;5
+;Feather Double Mattress;4;gp;30
+;Feather Single Mattress;2;gp;20
+;Straw Double Mattress;3;gp;25
+;Straw Single Mattress;1;gp;15
+square foot;Mirror ;12;gp;2
+;Feather Pillow;2;sp;1.5
+;Pewter Plate;8;sp;0.7
+;Pottery Plate;8;cp;0.6
+;Silver Plate;2;gp;0.7
+;Small Rug;1;sp;5
+;Large Rug;3;sp;50
+;Wall Sconce;5;cp;5
+;Sofa;30;gp;75
+;Stool ;3;gp;8
+square foot;Table ;2;sp;5
+;Tub ;4;gp;10
+;Plain Wardrobe;15;gp;50
+;Wardrobe with mirrors ;25;gp;85

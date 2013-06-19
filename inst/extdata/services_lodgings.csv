@@ -1,0 +1,16 @@
+Room & Board ;Cost
+Month, City, Common room ;20 gp
+Month, City, Poor Room ;6 sp
+Month, Common room ;12 gp
+Month, Double room ;58 gp
+Month, Latrine, Separate ;2 gp
+Month, Poor room ;8 sp
+Month, Private room ;29 gp
+Night, Common room ;5 sp
+Night, Double room ;2 gp
+Night, Poor room ;5 cp
+Night, Private room ;1 gp
+Week, Common room ;3 gp
+Week, Double room ;9 gp
+Week, Poor room ;2 sp
+Week, Private room ;4 gp

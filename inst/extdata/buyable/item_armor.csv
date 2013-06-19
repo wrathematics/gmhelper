@@ -1,0 +1,45 @@
+Armor ;Cost ;Weight ;AC ;Dp 
+;;;;
+Armor Padding ;3 gp ;5;9;3
+Augmented Mail ;175 gp ;44;4;28
+Banded Mail ;200 gp ;35;4;30
+Bar Mail ;200 gp ;40;4;29
+Brigandine, Metal ;120 gp ;35;6;20
+Brigandine, Wood or Horn ;80 gp ;26;7;10
+Bronze Plate ;400 gp ;45;4;30
+Chain Mail ;75 gp ;40;5;25
+Cuir-bouilli ;20 gp ;15;7;14
+Double Mail ;160 gp ;45;4;29
+Gauntlets,leather ;2 gp ;2;0;5
+Gauntlets,chain mail ;5 gp ;2.5;0;10
+Gauntlets,plate mail ;7 gp ;3.5;0;13
+Gauntlets,plate,full ;15 gp ;2.5;0;15
+Helm, Cap ;3 gp ;1;1* ;5
+Helm, Coif ;8 gp ;2;2* ;15
+Helmet, Basinet ;10 gp ;5;2* ;25
+Helmet, Great ;30 gp ;10;3* ;35
+Helmet, Open Faced ;10 gp ;4;2* ;20
+Hide ;15 gp ;30;6;20
+Leather ;5 gp ;10;8;10
+Lamellar, Metal ;210 gp ;36;4;26
+Lamellar, Wood or Horn ;120 gp ;20;5;10
+Padded ;4 gp ;10;8;10
+Plate, Mail ;600 gp ;50;3;35
+Plate, Field ;2000 gp ;60;2;40
+Plate, Full ;4k - 10k gp ;70;1;45
+Ring Mail ;100 gp ;30;7;15
+Scale Mail, Metal ;120 gp ;40;6;20
+Scale Mail, Wood or Horn ;80 gp ;20;7;10
+Shield, Body ;15 gp ;15;1# ;35
+Shield, Buckler ;5 gp ;3;1% ;10
+Shield, Large ;13 gp ;13;1% ;30
+Shield, Medium ;10 gp ;10;1% ;25
+Shield, Small ;7 gp ;5;1% ;10
+Shield, Small wooden ;1 gp ;3;1% ;8
+Splint Mail ;80 gp ;40;4;30
+Studded Leather ;20 gp ;25;7;15
+Dp's = Damage points, Each time the armor is hit, it takes 1 dp.;;;;
+at 0 dp's, the armor is useless. Armor can be repaired at any smithy.;;;;
+The * means AC for head and neck only, and the +1;;;;
+% is just the shield bonus to base armor class;;;;
+# is just the shield bonus to base armor class, this is 2 against missle weapons;;;;

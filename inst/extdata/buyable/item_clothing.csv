@@ -1,0 +1,57 @@
+Gentype;Clothing ;Cost;Unit;Weight
+; Apron ;1;cp;1
+; Belt ;3;Sp;0.3
+; High Hard Boots;2;gp;7
+; High Soft Boots;1;gp;5
+; Low Hard Boots;1;gp;5
+; Low Soft Boots;8;sp;3
+; Riding Boots;3;gp;6
+; Breeches ;2;gp;1
+; Plain Brooch;10;gp;0.2
+; Cap ;1;sp;1
+; Cloth Cape;3;cp;1
+; Fur Cape;100;gp;2
+; Cloth Cloak;2;sp;2
+; Fur Cloak;200;gp;3
+square yard; Canvas Cloth;1;gp;2
+square yard; Cotton Cloth;1;cp;1
+square yard; Linen Cloth;5;bp;1
+square yard; Satin Cloth;4;gp;1
+square yard; Silk Cloth;10;gp;0.5
+square yard; Velvet Cloth;4;gp;1
+square yard; Wool Cloth;8;bp;2
+; Dress ;9;cp;4
+; Fur trimming ;10;gp;0.1
+; Broad Girdle;3;gp;1
+; Normal Girdle;2;gp;0.5
+; Cloth Gloves;1-2;cp;0.5
+; Leather Gloves;5-10;gp;1
+; Common Gown;12;sp;2
+; Cloth Hat;10;cp;1
+; Fur Hat;40;gp;1
+; Straw Hat;7;bp;0.5
+; Hose/Leggings ;2;gp;0.5
+; Silk Jacket;80;gp;1
+; Jerkin ;1;gp;7.5
+; Knife Sheath ;3;cp;0.5
+; Loincloth ;1;cp;0.5
+; Mittens ;3;sp;0.5
+; Sewing Needle;2;sp;0.1
+; Pin ;1;gp;0.1
+; Poor Robe;6;cp;5
+; Common Robe;9;sp;5
+; Embroidered Robe;20;gp;5
+; Sandals ;5;cp;1
+; Sash ;1;gp;0.5
+; Scissors ;5;cp;1
+; Shirt/blouse ;4;cp;1
+; Shoes ;1;gp;1
+; Surcoat ;6;sp;1
+;  Sword Scabbard;4;gp;1
+; Tabard ;6;sp;1
+; 1 spool Thread;6;bp;0.5
+; coarse Toga;8;cp;1
+; Trouser/skirt ;3;cp;1
+; Tunic ;8;sp;1
+; Cloth Vest;1;gp;1
+; Fur Vest;100;gp;1.5

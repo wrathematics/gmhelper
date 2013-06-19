@@ -1,0 +1,47 @@
+Livestock ;Cost ;Weight
+Ape ;150 gp ;350
+Boar ;10 gp ;100
+Bull ;20 gp ;1000
+Calf ;5 gp ;50
+Camel ;10-15 gp ;900
+Capon ;3 cp ;6
+Cat ;5 sp ;10
+Chicken ;3 cp ;10
+Cow ;10 gp ;750
+Dog,guard ;20-100 gp ;80
+Dog,hunting ;20-50 gp ;65
+Dog,lap ;5-20 gp ;50
+Dog,sled ;10-40 gp ;80
+Dog,war ;30-120 gp ;95
+Donkey ;8 gp ;800
+Dove ;3 sp ;2
+Elephant,labor ;200-300 gp ;10000
+Elephant,war ;300-1200 gp ;12000
+Falcon,trained ;600-1200 gp ;8
+Goat ;1 gp ;60
+Goose ;5 cp ;6
+Guinea hen ;2 cp ;5
+Hawk,large ;130-180 gp ;40
+Hawk,small ;15-40 gp ;7
+Horse,draft ;200-300 gp ;800
+Horse,heavy war ;300-500 gp ;1300
+Horse,light war ;120-240 gp ;700
+Horse,medium war ;180-360 gp ;900
+Horse,riding ;45-80 gp ;600
+Hunting cat ;10,000 gp ;175
+Lama ;30 gp ;650
+Mule ;20 gp ;700
+Ox ;15 gp ;1000
+Partridge ;5 cp ;2
+Peacock ;5 sp ;7
+Pigeon ;1 cp ;1.5
+Pigeon, homing ;100;1.5
+Piglet ;1 gp ;10
+Pig ;3 gp ;300
+Pony,riding ;15-25 gp ;400
+Pony,war ;25-35 gp ;450
+ram ;4 gp ;100
+Sheep ;2 gp ;50
+Songbird ;1 gp ;1
+Swan ;5 sp ;8
+Yak ;9 gp ;480

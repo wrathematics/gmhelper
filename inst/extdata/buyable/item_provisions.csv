@@ -1,0 +1,48 @@
+"Itemtype"	"Provisions "	"Cost "	"Unit"	"Weight"
+	"pint of Ale"	1	"cp"	0
+	"pint of dark Ale"	3	"cp"	0
+	"pint of heavy Beer"	1	"sp"	0
+	"pint of light Beer"	4	"cp"	0
+	" pint of Brandy"	1	"sp"	0
+	" loaf of Bread"	7	"bp"	2.5
+	" Butter"	2	"sp"	1
+	" pint of Cider"	8	"cp"	0
+	" Tun (250 ga) of Cider"	8	"cp"	2050
+"days of "	" Dry Rations"	10	"gp"	1
+	" Eggs (50) "	7	"sp"	0
+	" Eggs (12) "	2	"sp"	0
+"pound bag of "	" Figs"	3	"sp"	1
+	" Firewood (day) "	1	"cp"	5
+	" Salted Herring Fish"	1	"sp"	0
+	" Barrel of Pickled Fish"	3	"gp"	0
+"pound bag of "	"Flour"	6	"sp"	1
+	" Merchant's meal Food"	1	"sp"	0
+	" Rich meal Food"	1	"gp"	0
+"day of"	" Horse meal Grain"	1	"cp"	5
+	" Pint of Grog"	3	"cp"	0
+	" Common herbs"	5	"cp"	1
+	" Pint of Apple Juice"	8	"bp"	0
+	" Pint of Grape Juice"	8	"bp"	0
+	" Pint of Orange Juice"	9	"bp"	0
+	" Pint of Tomato Juice"	7	"bp"	0
+	" Pint of Mead"	5	"cp"	0
+	" Pint of Cow Milk"	2	"cp"	0
+	" Pint of Goat Milk"	1	"cp"	0
+	" Nuts (lb) "	1	"sp"	1
+	" Raisins (lb) "	2	"sp"	1
+"week of"	"Iron Rations"	5	"gp"	7.5
+"week of"	"Standard Rations"	3	"gp"	20
+	" Rice (lb) "	2	"sp"	1
+	" Pint of Rum"	5	"cp"	0
+	" Salt (lb) "	1	"sp"	1
+	"Saffron Spice"	15	"gp"	1
+	"Clove Spice"	15	"gp"	1
+	"Ginger Spice"	2	"gp"	1
+	"Pepper Spice"	2	"gp"	1
+	"Cinnamon Spice"	1	"gp"	1
+	" Coarse (lb) Sugar"	5	"sp"	1
+	" Pint of Tea"	7	"bp"	0
+	" Pint of Spring Water"	5	"bp"	0
+	" Pint of Good Wine"	1	"sp"	0
+	" Tun (250 Gal) Good Wine"	20	"gp"	2050
+	" Pint of Watered Wine"	6	"cp"	0

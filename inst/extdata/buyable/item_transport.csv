@@ -1,0 +1,41 @@
+Transport ;Cost 
+;
+Barge ;500 gp 
+Barge (or Raft), Small ;1 gp/sy 
+Boat, Collapsible ;500 gp 
+Boat, Small ;75 gp 
+Boat, Long ;150 gp 
+Canoe, Small ;30 gp 
+Canoe, Large ;50 gp 
+Canoe, War ;100 gp 
+Caravel ;10,000 gp 
+Cart ;50 gp 
+Carriage, Common ;150 gp 
+Carriage, (coach) Ornamental ;7000 gp 
+Chariot, Riding ;200 gp 
+Chariot, War ;500 gp 
+Coach, Royal ;200 gp+ 
+Coaster ;5000 gp 
+Cog ;10,000 gp 
+Curragh ;500 gp 
+Dog-sled ;30 gp 
+Drakkar ;25,000 gp 
+Dromond ;15,000 gp 
+Galleon ;50,000 gp 
+Galley, Large ;25,000 gp 
+Galley, Small ;10,000 gp 
+Galley, War ;40,000 gp 
+Kayak ;250 gp 
+Knarr ;3000 gp 
+Longship ;10000 gp 
+Oar, Common ;2 gp 
+Oar, Galey ;10 gp 
+Raft or small keelboat ;100 gp 
+Sail ;20 gp 
+Sedan Chair ;100 gp 
+Ship, Merchant, Large ;15,000 gp 
+Ship, Merchant, Small ;5,000 gp 
+Ship, War ;20,000 gp 
+Wagon, Closed ;250 gp 
+Wagon, Open ;150 gp 
+Wagon, Wheel ;5
