@@ -10,4 +10,6 @@ To install:
   -install.packages("devtools")
   -install.packages(c("gWidgets", "gWidgetsRGtk2"))
   -install_github(repo="gmhelper", username="wrathematics")
-  -Don't be surprised if this does not work.
+-Don't be surprised if this does not work.
+-If it miraculously does work, from R type the command gmhelper() from the
+  R terminal to start the gui.
