@@ -1,1 +1,7 @@
-For data used in the package (inst/extdata/), see the file inst/DATACOPYING
+The source code of this project is distributed under the 2-clause BSD
+license (see LICENSE.txt for details).  The tl;dr is that you can basically
+do anything with the code, but it's mostly shit so I wouldn't bother.
+
+The data used for the random generation in this package is released under a 
+separate license.  From the source tree, see inst/extdata/ for the datasets.
+For their license, see the file inst/DATACOPYING
