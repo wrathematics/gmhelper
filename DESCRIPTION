@@ -1,11 +1,9 @@
 Package: gmhelper
-Type: Package
-Title: Random rolls from treasure to monsters.
-Depends: gWidgets, gWidgetsRGtk2
-Version: 1.0
-Date: 2012-07-22
-Author: tofu
-Maintainer: tofu <yourfault@somewhere.net>
+Title: Random Rolls for Game Masters
 Description: GM Helper.
-License: GPL >= 3.0
-Packaged: 2012-08-06 04:02:09 UTC; iao
+Imports: gWidgets,
+  gWidgetsRGtk2
+Version: 1.0
+License: BSD 2-clause License + file LICENSE
+Author: Drew Schmidt
+Maintainer: Drew Schmidt <wrathematics@gmail.com>

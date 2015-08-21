@@ -1,6 +1,17 @@
-# -------------------------------------------------
-# Setup
-# -------------------------------------------------
+#' gmhelper
+#' 
+#' @import gWidgets
+#' @import gWidgetsRGtk2
+#' 
+#' @name ngram-package
+#' @docType package
+#' @author Drew Schmidt \email{wrathematics AT gmail.com}
+#' @keywords Package
+NULL
+
+
+
+#' @export
 gmhelper <- function(.)
 {
   # FUNCTIONS
@@ -28,19 +39,19 @@ gmhelper <- function(.)
       whichrace <- svalue(race_radios)
 
       if (whichrace=="Human")  
-        svalue(names_textbox) <- lapply(1:10, function(.) gmhelper:::human_name(first=first, middle=middle, last=last, sex=whichsex) )
+        svalue(names_textbox) <- lapply(1:10, function(.) human_name(first=first, middle=middle, last=last, sex=whichsex) )
       else if (whichrace=="Elf")  
-        svalue(names_textbox) <- lapply(1:10, function(.) gmhelper:::elf_name(first=first, middle=middle, last=last, sex=whichsex) )
+        svalue(names_textbox) <- lapply(1:10, function(.) elf_name(first=first, middle=middle, last=last, sex=whichsex) )
       else if (whichrace=="Dwarf")
-        svalue(names_textbox) <- lapply(1:10, function(.) gmhelper:::dwarf_name(first=first, middle=middle, last=last, sex=whichsex) )
+        svalue(names_textbox) <- lapply(1:10, function(.) dwarf_name(first=first, middle=middle, last=last, sex=whichsex) )
       else if (whichrace=="Gnome")
-        svalue(names_textbox) <- lapply(1:10, function(.) gmhelper:::gnome_name(first=first, middle=middle, last=last, sex=whichsex) )
+        svalue(names_textbox) <- lapply(1:10, function(.) gnome_name(first=first, middle=middle, last=last, sex=whichsex) )
       else if (whichrace=="Halfling")
-        svalue(names_textbox) <- lapply(1:10, function(.) gmhelper:::halfling_name(first=first, middle=middle, last=last, sex=whichsex) )
+        svalue(names_textbox) <- lapply(1:10, function(.) halfling_name(first=first, middle=middle, last=last, sex=whichsex) )
       else if (whichrace=="Orc")
-        svalue(names_textbox) <- lapply(1:10, function(.) gmhelper:::orc_name(first=first, middle=middle, last=last) )
+        svalue(names_textbox) <- lapply(1:10, function(.) orc_name(first=first, middle=middle, last=last) )
       else if (whichrace=="Troll")
-        svalue(names_textbox) <- lapply(1:10, function(.) gmhelper:::troll_name(first=first, middle=middle, last=last) )
+        svalue(names_textbox) <- lapply(1:10, function(.) troll_name(first=first, middle=middle, last=last) )
     }
   }
 
@@ -56,14 +67,14 @@ gmhelper <- function(.)
     if (whichrace=="Halfling")
       race <- 'hl'
     
-    svalue(town_textbox) <- lapply(1:10, function(.) gmhelper:::town_name(race=race) )
+    svalue(town_textbox) <- lapply(1:10, function(.) town_name(race=race) )
   }
 
   gentaverns <- function(h, ...)
   {
     tvinns <<- svalue(tavern_radios)
     if (length(tvinns)==0){
-      svalue(tavern_textbox) <- lapply(1:10, function(.) gmhelper:::tavern_name(tavern='rand', inn='rand') )
+      svalue(tavern_textbox) <- lapply(1:10, function(.) tavern_name(tavern='rand', inn='rand') )
     } else {
       if (length(tvinns)==2){
         tavern <- TRUE
@@ -78,7 +89,7 @@ gmhelper <- function(.)
         inn <- FALSE
       }
       
-      svalue(tavern_textbox) <- lapply(1:10, function(.) gmhelper:::tavern_name(tavern=tavern, inn=inn) )
+      svalue(tavern_textbox) <- lapply(1:10, function(.) tavern_name(tavern=tavern, inn=inn) )
     }
   }
 
@@ -98,12 +109,12 @@ gmhelper <- function(.)
     else if (whichdn=="16-20")
       qual <- 5
 
-    svalue(dungeon_textbox) <- lapply(1:10, function(.) gmhelper:::dungeon_name(qual=qual) )
+    svalue(dungeon_textbox) <- lapply(1:10, function(.) dungeon_name(qual=qual) )
   }
 
   genadventure <- function(h, ...)
   {
-    svalue(adventure_textbox) <- lapply(1:10, function(.) gmhelper:::adventure_name() )
+    svalue(adventure_textbox) <- lapply(1:10, function(.) adventure_name() )
   }
 
   genpocket <- function(h, ...)
@@ -111,31 +122,31 @@ gmhelper <- function(.)
     whichwl <- svalue(loot_radios)
     if (whichwl=="RANDOM"){
       qual <- 'rand'
-      cangen <- list(gmhelper:::gen_map, gmhelper:::gen_mundane, gmhelper:::gen_food, gmhelper:::gen_key, gmhelper:::gen_gems, gmhelper:::gen_jewelry, gmhelper:::gen_potions)
+      cangen <- list(gen_map, gen_mundane, gen_food, gen_key, gen_gems, gen_jewelry, gen_potions)
       moneyqual <- sample(1:6, 1)
     }
     else if (whichwl=="Pauper"){
-      cangen <- list(gmhelper:::gen_mundane, gmhelper:::gen_food, gmhelper:::gen_key)
+      cangen <- list(gen_mundane, gen_food, gen_key)
       qual <- 1
       moneyqual <- sample(1:2, 1)
     }
     else if (whichwl=="Commoner"){
-      cangen <- list(gmhelper:::gen_map, gmhelper:::gen_mundane, gmhelper:::gen_food, gmhelper:::gen_key)
+      cangen <- list(gen_map, gen_mundane, gen_food, gen_key)
       qual <- 2
       moneyqual <- sample(1:3, 1)
     }
     else if (whichwl=="Merchant"){
-      cangen <- list(gmhelper:::gen_map, gmhelper:::gen_mundane, gmhelper:::gen_food, gmhelper:::gen_key, gmhelper:::gen_potions)
+      cangen <- list(gen_map, gen_mundane, gen_food, gen_key, gen_potions)
       qual <- 3
       moneyqual <- sample(3:5, 1)
     }
     else if (whichwl=="Noble"){
-      cangen <- list(gmhelper:::gen_map, gmhelper:::gen_mundane, gmhelper:::gen_key, gmhelper:::gen_gems, gmhelper:::gen_potions)
+      cangen <- list(gen_map, gen_mundane, gen_key, gen_gems, gen_potions)
       qual <- 4
       moneyqual <- sample(5, 1)
     }
     else if (whichwl=="King"){
-      cangen <- list(gmhelper:::gen_map, gmhelper:::gen_mundane, gmhelper:::gen_key, gmhelper:::gen_gems, gmhelper:::gen_jewelry, gmhelper:::gen_potions)
+      cangen <- list(gen_map, gen_mundane, gen_key, gen_gems, gen_jewelry, gen_potions)
       qual <- 5
       moneyqual <- 6
     }
@@ -145,9 +156,9 @@ gmhelper <- function(.)
     if (length(whichones)>0){
       svalue(loot_textbox) <- lapply(seq_along(whichones), function(i) whichones[[i]](qual=qual) )
       add(loot_textbox, "")
-      add(loot_textbox, gmhelper:::gen_money(moneyqual) )
+      add(loot_textbox, gen_money(moneyqual) )
     } else
-      svalue(loot_textbox) <- gmhelper:::gen_money(moneyqual)
+      svalue(loot_textbox) <- gen_money(moneyqual)
   }
 
   genpotion <- function(h, ...)
@@ -167,7 +178,7 @@ gmhelper <- function(.)
     else
       labellang <- as.character(svalue(potion_radios3))
 
-    svalue(potion_textbox) <- gmhelper:::gen_pot_desc(qual=qual, label=label, labellang=labellang)
+    svalue(potion_textbox) <- gen_pot_desc(qual=qual, label=label, labellang=labellang)
   }
 
   clear_dice <- function(h, ...)
@@ -246,7 +257,7 @@ gmhelper <- function(.)
     
     age <- 'rand'
     
-    x <- gmhelper:::roll_a_guy(strength=stats, race=race, class=class, alignment='rand', age='rand', htwt='rand', sex='rand', name='randomnameasdfqwert', level=1, l1hpreroll='max')
+    x <- roll_a_guy(strength=stats, race=race, class=class, alignment='rand', age='rand', htwt='rand', sex='rand', name='randomnameasdfqwert', level=1, l1hpreroll='max')
     svalue(generators_textbox) <- paste("Name:  ", x[[1]][1])
     add(generators_textbox, paste(paste("\nRace:  ", x[[1]][2]), paste("Class:  ", x[[1]][3]), sep="\t\t"), sep="      ")
     add(generators_textbox, paste(paste("\nAge:  ", x[[1]][4], sep="       "), paste("Sex:  ", x[[1]][5]), sep="\t\t"))
@@ -256,7 +267,7 @@ gmhelper <- function(.)
   # ~gui~
   # -------------------------------------------------
 
-  menuactions <- list(quit=gaction("Quit", icon="quit", handler=function(...) dispose(win)), 
+  menuactions <- list(quit=gaction(label="Quit", icon="quit", handler=function(...) dispose(win)), 
                       about=gaction("About", icon="about", handler=function(...) aboutgmhelper()))
   aboutgmhelper <- function(...) gmessage("~buttz~")
 
@@ -443,7 +454,7 @@ gmhelper <- function(.)
 
 
 
-gmhelper()
+#gmhelper()
 
 
 
