@@ -6,11 +6,12 @@
 
 
 This package offers many simple random generators and utilities for game
-masters of fantasy role playing games. 
+masters of fantasy role playing games inside a simple to use gui.
 
-The package is far from ready for an official release, and all snapshots
+Don't look too hard at the internals, because I wrote this labyrinthine
+mess back when I didn't really understand R, and I never really refactored
+it.  The package is far from ready for an official release, and all snapshots
 should be considered highly experimental.
-
 
 Assuming package installation is successful (see below), you can
 start the gui from an R console via:
