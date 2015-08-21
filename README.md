@@ -21,9 +21,12 @@ gmhelper::gmhelper()
 ```
 
 
+
 ## Installation
 
-Using the devtools package: 
+The package depends on gWidgetsRGtk2, whose dependencies are basically
+impossible to install at this point.  But if you manage to figure it out,
+you can install gmhelper via:
 
 ```r
 devtools::install_github("wrathematics/gmhelper")
