@@ -1,9 +1,14 @@
 Package: gmhelper
 Title: Random Rolls for Game Masters
 Description: GM Helper.
-Imports: gWidgets,
-  gWidgetsRGtk2
-Version: 1.0
+Imports:
+    graphics,
+    stats,
+    utils
+Suggests:
+    shiny
+Version: 1.0.0
 License: BSD 2-clause License + file LICENSE
 Author: Drew Schmidt
 Maintainer: Drew Schmidt <wrathematics@gmail.com>
+RoxygenNote: 5.0.1
