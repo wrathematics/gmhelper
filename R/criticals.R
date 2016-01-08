@@ -17,7 +17,7 @@ gencrit <- function(type)
       "I'LL FUCKING KILL YOU! Exploding weapon dice. Re-roll if the first die roll is a 1."
     )
   }
-  else if (type == "ranged")
+  else if (type == "Ranged")
   {
     crits <- c(
       # +2 to hit next attack
@@ -59,7 +59,7 @@ genmiss <- function(type)
       "WHAT DOES IT ALL MEAN?! You suffer an existential crisis of the DM's discretion. You are dazed until your next turn and suffer a -2 penalty to AC."
     )
   }
-  else if (type == "ranged")
+  else if (type == "Ranged")
   {
     misses <- c(
       # weapon jam
