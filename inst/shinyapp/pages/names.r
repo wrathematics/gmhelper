@@ -79,7 +79,7 @@ names_npc <- function(input)
       name <- ""
     
     
-    localstate$npc_out <- HTML(paste0(name, "<br>"))
+    localstate$npc_out <- HTML(list_to_bullets(name))
   })
   
   invisible()
@@ -137,7 +137,7 @@ names_dungeon <- function(input)
 
     
     
-    localstate$dungeon_out <- HTML(paste0(name, "<br>"))
+    localstate$dungeon_out <- HTML(list_to_bullets(name))
   })
   
   invisible()
@@ -169,7 +169,7 @@ names_adventure <- function(input)
   observeEvent(input$names_adventure_fit, {
     name <- lapply(ngen, function(.) gmhelper:::adventure_name())
     
-    localstate$adventure_out <- HTML(paste0(name, "<br>"))
+    localstate$adventure_out <- HTML(list_to_bullets(name))
   })
   
   invisible()
@@ -213,7 +213,7 @@ names_tavern <- function(input)
     
     name <- lapply(ngen, function(.) gmhelper:::tavern_name(tavern=tavern, inn=inn))
     
-    localstate$tavern_out <- HTML(paste0(name, "<br>"))
+    localstate$tavern_out <- HTML(list_to_bullets(name))
   })
   
   invisible()
@@ -262,7 +262,7 @@ names_town <- function(input)
     
     name <- lapply(ngen, function(.) gmhelper:::town_name(race=race))
     
-    localstate$town_out <- HTML(paste0(name, "<br>"))
+    localstate$town_out <- HTML(list_to_bullets(name))
   })
   
   invisible()
