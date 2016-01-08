@@ -4,7 +4,8 @@ output$main_names <- renderUI({
       tabPanel("NPC", uiOutput("names_npc_ui")),
       tabPanel("Dungeon", uiOutput("names_dungeon_ui")),
       tabPanel("Old School Adventure", uiOutput("names_adventure_ui")),
-      tabPanel("Tavern & Inn", uiOutput("names_tavern_ui"))
+      tabPanel("Tavern & Inn", uiOutput("names_tavern_ui")),
+      tabPanel("Town", uiOutput("names_town_ui"))
     )
   )
 })
@@ -84,6 +85,7 @@ names_npc <- function(input)
   
   invisible()
 }
+
 
 
 ### Dungeon
@@ -213,6 +215,55 @@ names_tavern <- function(input)
     name <- lapply(ngen, function(.) gmhelper:::tavern_name(tavern=tavern, inn=inn))
     
     localstate$tavern_out <- HTML(paste0(name, "<br>"))
+  })
+  
+  invisible()
+}
+
+
+
+### Town
+output$names_town_ui <- renderUI({
+  list(
+    sidebarLayout(
+      sidebarPanel(
+        
+        radioButtons(inputId="names_town_race", 
+                     label="Founding Race", 
+                     c("Human", "Dwarf", "Elf", "Halfling"), 
+                     selected="Human", 
+                     inline=FALSE),
+        
+        actionButton("names_town_fit", "Generate!")
+      ),
+      
+      mainPanel(
+        renderUI({
+          localstate$town_out
+        })
+      )
+    )
+  )
+})
+
+
+
+names_town <- function(input)
+{
+  observeEvent(input$names_town_fit, {
+    race <- input$names_town_race
+    if (race=="Human")
+      race <- 'h'
+    else if (race=="Dwarf")
+      race <- 'd'
+    else if (race=="Elf")
+      race <- 'e'
+    else if (race=="Halfling")
+      race <- 'hl'
+    
+    name <- lapply(ngen, function(.) gmhelper:::town_name(race=race))
+    
+    localstate$town_out <- HTML(paste0(name, "<br>"))
   })
   
   invisible()
