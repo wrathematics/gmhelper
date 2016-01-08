@@ -2,7 +2,7 @@
 char_name <- function(race, first=TRUE, middle=FALSE, last=TRUE, sex='m')
 {
   if (race=='rand')
-    race <- sample(c("half-elf", "human", "dwarf", "elf", "halfling", "gnome"), 1)
+    race <- sample(c("human", "dwarf", "elf", "halfling", "gnome"), 1)
 
   eval(parse(text=paste(race, "_name(", first, ",", middle, ",", last,")", sep="")))
 }
