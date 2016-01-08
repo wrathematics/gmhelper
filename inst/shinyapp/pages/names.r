@@ -1,5 +1,5 @@
 output$main_names <- renderUI({
-  mainPanel(id="analysetabs", 
+  mainPanel(
     tabsetPanel(
       tabPanel("NPC", uiOutput("names_npc_ui")),
       tabPanel("Dungeon", uiOutput("names_dungeon_ui")),
@@ -60,7 +60,6 @@ names_npc <- function(input)
     last <- ifelse("Last"%in%whichnames, 1, 0)
     
     race <- input$names_npc_race
-    print(race)
     
     if (race=="Human")  
       name <- lapply(ngen, function(.) gmhelper:::human_name(first=first, middle=middle, last=last, sex=sex) )

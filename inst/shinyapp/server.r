@@ -16,4 +16,6 @@ shinyServer(function(input, output, session){
   names_adventure(input)
   names_tavern(input)
   names_town(input)
+  
+  loot_pockets(input)
 })
