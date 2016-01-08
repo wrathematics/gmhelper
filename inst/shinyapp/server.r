@@ -19,4 +19,6 @@ shinyServer(function(input, output, session){
   
   loot_pockets(input)
   loot_potions(input)
+  
+  misc_crits(input)
 })
