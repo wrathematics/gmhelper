@@ -221,3 +221,60 @@ gen_pot_desc <- function(qual='rand', label='rand', labellang='rand', extra='ran
 
 #simple_items <- list(item_maps, mundane, food, drink, key, money, gems, potions)
 #sample(simple_items, size=1)[[1]]()
+
+
+
+pocketloot <- function(qual)
+{
+  if (qual=="RANDOM")
+  {
+    qual <- 'rand'
+    cangen <- list(gen_map, gen_mundane, gen_food, gen_key, gen_gems, gen_jewelry, gen_potions)
+    moneyqual <- sample(1:6, 1)
+  }
+  else if (qual=="Pauper")
+  {
+    cangen <- list(gen_mundane, gen_food, gen_key)
+    qual <- 1
+    moneyqual <- sample(1:2, 1)
+  }
+  else if (qual=="Commoner")
+  {
+    cangen <- list(gen_map, gen_mundane, gen_food, gen_key)
+    qual <- 2
+    moneyqual <- sample(1:3, 1)
+  }
+  else if (qual=="Merchant")
+  {
+    cangen <- list(gen_map, gen_mundane, gen_food, gen_key, gen_potions)
+    qual <- 3
+    moneyqual <- sample(3:5, 1)
+  }
+  else if (qual=="Noble")
+  {
+    cangen <- list(gen_map, gen_mundane, gen_key, gen_gems, gen_potions)
+    qual <- 4
+    moneyqual <- sample(4:5, 1)
+  }
+  else if (qual=="King")
+  {
+    cangen <- list(gen_map, gen_mundane, gen_key, gen_gems, gen_jewelry, gen_potions)
+    qual <- 5
+    moneyqual <- 6
+  }
+  
+  howmany <- sample(0:5, 1, prob=c(.1, .225, .225, .2, .15, .1))
+  whichones <- sample(cangen, size=howmany, replace=TRUE)
+  
+  if (length(whichones)>0)
+  {
+    stuff <- lapply(seq_along(whichones), function(i) whichones[[i]](qual=qual) )
+    money <- gen_money(moneyqual)
+    loot <- c(stuff, money)
+  } 
+  else
+    loot <- gen_money(moneyqual)
+  
+  
+  loot
+}
