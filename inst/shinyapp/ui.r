@@ -4,6 +4,8 @@ library(shiny)
 about.thisapp <- HTML("
   <h1>GM Helper</h1>
   
+  <img src='img.jpg' style='height:325px'>
+  
   <h3>Random Rollers for Lazy Assholes</h3>
   
   <p style='font-size:120%;'>
