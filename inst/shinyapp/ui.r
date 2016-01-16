@@ -4,7 +4,7 @@ library(shiny)
 about.thisapp <- HTML("
   <h1>GM Helper</h1>
   
-  <img src='img.jpg' style='height:325px'>
+  <img src='img.jpg' style='height:300px'>
   
   <h3>Random Rollers for Lazy Assholes</h3>
   
@@ -37,11 +37,11 @@ shinyUI(
       windowTitle="GM Helper", id="nav_tag", 
       inverse=TRUE, collapsible=FALSE, 
       
+      tabPanel("About", helpText(about.thisapp)),
       tabPanel("Names", uiOutput("main_names")),
       tabPanel("Loot", uiOutput("main_loot")),
-      tabPanel("Misc", uiOutput("main_misc")),
+      tabPanel("Misc", uiOutput("main_misc"))
       # tabPanel("Roller", uiOutput("main_roller")),
-      tabPanel("About", helpText(about.thisapp))
       )
     )
   )
