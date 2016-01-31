@@ -4,10 +4,9 @@ Description: GM Helper.
 Imports:
     graphics,
     stats,
-    utils
-Suggests:
+    utils,
     shiny
-Version: 1.0.0
+Version: 2.0.0
 License: BSD 2-clause License + file LICENSE
 Author: Drew Schmidt
 Maintainer: Drew Schmidt <wrathematics@gmail.com>
