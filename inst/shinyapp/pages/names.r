@@ -5,7 +5,8 @@ output$main_names <- renderUI({
       tabPanel("Dungeon", uiOutput("names_dungeon_ui")),
       tabPanel("Old School Adventure", uiOutput("names_adventure_ui")),
       tabPanel("Tavern & Inn", uiOutput("names_tavern_ui")),
-      tabPanel("Town", uiOutput("names_town_ui"))
+      tabPanel("Town", uiOutput("names_town_ui")),
+      tabPanel("Societies", uiOutput("names_society_ui"))
     )
   )
 })
@@ -267,3 +268,36 @@ names_town <- function(input)
   
   invisible()
 }
+
+
+
+### Societies
+output$names_society_ui <- renderUI({
+  list(
+    sidebarLayout(
+      sidebarPanel(
+        actionButton("names_society_fit", "Generate!")
+      ),
+      
+      mainPanel(
+        renderUI({
+          localstate$society_out
+        })
+      )
+    )
+  )
+})
+
+
+
+names_society <- function(input)
+{
+  observeEvent(input$names_society_fit, {
+    name <- lapply(ngen, function(.) gmhelper:::society())
+    
+    localstate$society_out <- HTML(list_to_bullets(name))
+  })
+  
+  invisible()
+}
+
