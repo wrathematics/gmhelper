@@ -6,7 +6,7 @@ about.thisapp <- HTML("
   
   <img src='img.jpg' style='height:300px'>
   
-  <h3>Random Rollers for Lazy Assholes</h3>
+  <h3>Random Rollers for Lazy Jerks</h3>
   
   <p style='font-size:120%;'>
   This is a collection of generators for use with fantasy tabletop
