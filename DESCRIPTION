@@ -8,6 +8,9 @@ Imports:
     shiny
 Version: 2.0.0
 License: BSD 2-clause License + file LICENSE
+ByteCompile: yes
+URL: https://github.com/wrathematics/gmhelper
+BugReports: https://github.com/wrathematics/gmhelper/issues
 Author: Drew Schmidt
 Maintainer: Drew Schmidt <wrathematics@gmail.com>
 RoxygenNote: 5.0.1
