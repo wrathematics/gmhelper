@@ -48,7 +48,7 @@ name_barbarian = function()
   f = sample_name(barbarian, 1)
   l = sample_name(barbarian, 2)
   
-  fixstr( paste(f, l, sep="") )
+  fixstr(f, l)
 }
 
 
@@ -78,7 +78,7 @@ name_human = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
   else
     l = ""
   
-  fixstr(paste(f, m, l))
+  fixstr(f, m, l)
 }
 
 
@@ -102,7 +102,7 @@ name_dwarf = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
   else
     l = ""
   
-  fixstr( paste( f, m, l ) )
+  fixstr(f, m, l)
 }
 
 
@@ -126,7 +126,7 @@ name_elf = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
   else
     l = ""
   
-  fixstr( paste( f, m, l ) )
+  fixstr(f, m, l)
 }
 
 
@@ -150,7 +150,7 @@ name_halfling = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
   else
     l = ""
   
-  fixstr( paste( f, m, l ) )
+  fixstr(f, m, l)
 }
 
 
@@ -174,7 +174,7 @@ name_gnome = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
   else
     l = ""
   
-  fixstr( paste( f, m, l ) )
+  fixstr(f, m, l)
 }
 
 
@@ -198,7 +198,7 @@ name_orc = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
   else
     l = ""
   
-  fixstr( paste( f, m, l ) )
+  fixstr(f, m, l)
 }
 
 
@@ -222,5 +222,5 @@ name_troll = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
   else
     l = ""
   
-  fixstr( paste( f, m, l ) )
+  fixstr(f, m, l)
 }

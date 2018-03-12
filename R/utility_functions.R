@@ -2,8 +2,10 @@
 samp <- function(x, ex=FALSE) sample(x, size=1)
 
 # remove gaps in strings
-fixstr <- function(str)
+fixstr <- function(...)
 {
+  str = paste(list(...), collapse=" ")
+  
   str <- unlist(strsplit(str, " "))
   str <- paste(str[which(str!="")], collapse=" ")
   
