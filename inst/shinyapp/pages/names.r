@@ -33,7 +33,7 @@ output$names_npc_ui <- renderUI({
         
         selectInput(inputId="names_npc_race",
                     label="Race", 
-                    c("Human", "Elf", "Dwarf", "Halfling", "Gnome", "Orc", "Troll"),
+                    c("Elf", "Dragon", "Dwarf", "Halfling", "Human", "Gnome", "Orc", "Spider", "Troll"),
                     selected="Human"),
         
         actionButton("names_npc_fit", "Generate!")
@@ -76,6 +76,10 @@ names_npc <- function(input)
       name <- lapply(ngen, function(.) gmhelper:::name_orc(first=first, middle=middle, last=last) )
     else if (race=="Troll")
       name <- lapply(ngen, function(.) gmhelper:::name_troll(first=first, middle=middle, last=last) )
+    else if (race=="Dragon")
+      name <- lapply(ngen, function(.) gmhelper:::name_dragon(first=first, middle=middle, last=last) )
+    else if (race=="Spider")
+      name <- lapply(ngen, function(.) gmhelper:::name_spider(first=first, middle=middle, last=last, sex=sex) )
     else
       name <- ""
     

@@ -2,7 +2,7 @@ root = "~/dev/gmhelper/"
 data_root = paste0(root, "/data/")
 setwd(paste0(root, "/data_raw/data/names/races"))
 
-reader = function(f) read.csv(f, sep="\t", header=TRUE, stringsAsFactors=TRUE)
+reader = function(f) read.csv(f, sep="\t", header=TRUE, stringsAsFactors=FALSE)
 
 files = dir(pattern="*.csv")
 names_names = sapply(strsplit(files, split=".", fixed=TRUE), `[`, 1)

@@ -224,3 +224,51 @@ name_troll = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
   
   fixstr(f, m, l)
 }
+
+
+
+name_dragon = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
+{
+  dragon = gmh_racenames$dragon
+  
+  if (first)
+    f = name_maker(dragon, sex, FALSE)
+  else
+    f = ""
+  
+  if (middle)
+    m = name_maker(dragon, sex, FALSE)
+  else
+    m = ""
+  
+  if (last)
+    l = name_maker(dragon, sex, TRUE)
+  else
+    l = ""
+  
+  fixstr(f, m, l)
+}
+
+
+
+name_spider = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
+{
+  spider = gmh_racenames$spider
+  
+  if (first)
+    f = name_maker(spider, sex, FALSE)
+  else
+    f = ""
+  
+  if (middle)
+    m = name_maker(spider, sex, FALSE)
+  else
+    m = ""
+  
+  if (last)
+    l = name_maker(spider, sex, TRUE)
+  else
+    l = ""
+  
+  fixstr(f, m, l)
+}
