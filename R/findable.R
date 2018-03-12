@@ -1,16 +1,16 @@
 # Maps/Directions
 gen_map <- function(qual="rand")
 {
-  .__map_qual <- c("Tattered", "Crude", "", "Fine", "Pristine")
+  map_qual <- c("Tattered", "Crude", "", "Fine", "Pristine")
   
   if (qual=="rand")
     qual <- sample(1:5, 1)
   
   cf <- sample(1:2, 1)
   if (cf==1)
-    return( fixstr( paste(sample(.__map_qual, 1) , "Map of the", dungeon_name(qual=qual)) ) )
+    return( fixstr( paste(sample(map_qual, 1) , "Map of the", dungeon_name(qual=qual)) ) )
   else
-    return( fixstr( paste(sample(.__map_qual, 1) , "Directions to the", dungeon_name(qual=qual)) ) )
+    return( fixstr( paste(sample(map_qual, 1) , "Directions to the", dungeon_name(qual=qual)) ) )
 }
 
 # Mundane
@@ -25,24 +25,24 @@ gen_mundane <- function(qual="rand")
 # Food and drink
 gen_food <- function(qual="rand")
 {
-  .__food_qual <- c("rancid", "stale", "palatable", "fresh", "yummy")
+  food_qual <- c("rancid", "stale", "palatable", "fresh", "yummy")
 
   if (qual=="rand")
     qual <- sample(1:5, 1)
 
-  fq <- .__food_qual[qual]
+  fq <- food_qual[qual]
   fd <- sample(as.character(unlist(.__food_)), 1)
   return( fixstr( paste(fq, fd) ) )
 }
 
 gen_drink <- function(qual="rand")
 {
-  .__drink_qual <- c("broken", "half empty", "", "fine", "large")
+  drink_qual <- c("broken", "half empty", "", "fine", "large")
 
   if (qual=="rand")
     qual <- sample(1:5, 1)
 
-  dq <- .__drink_qual[qual]
+  dq <- drink_qual[qual]
   dk <- sample(as.character(unlist(.__drink_)), 1)
   return( fixstr( paste(dq, dk) ) )
 }
@@ -53,7 +53,7 @@ gen_key <- function(qual="rand")
   if (qual=="rand")
     qual <- sample(1:5, 1)
   
-  .__key_qual <- list(
+  key_qual <- list(
     k1 <- c("wooden", "wax", "copper", "lead"),
     k2 <- c("pewter", "brass", "iron"),
     k3 <- c("bronze", "steel"),
@@ -63,7 +63,7 @@ gen_key <- function(qual="rand")
   
   .__key_size <- c("tiny", "small", "", "large", "enormous")
   
-  return( fixstr( paste(sample(.__key_size, 1), sample(.__key_qual[[qual]], 1), "key") ) )
+  return( fixstr( paste(sample(.__key_size, 1), sample(key_qual[[qual]], 1), "key") ) )
 }
 
 # Money
@@ -89,13 +89,13 @@ gen_gems <- function(qual='rand')
   if (qual=='rand') 
     qual <- sample(1:6, size=1, prob=c(.565, .25, .1, .05, .025, .01))
   
-  .__gems_qual <- c("ornamental", "semi-precious", "fancy", "precious", "gem", "jewel")
-  .__gems_val <- c(10, 50, 100, 500, 1000, 5000)
+  gems_qual <- c("ornamental", "semi-precious", "fancy", "precious", "gem", "jewel")
+  gems_val <- c(10, 50, 100, 500, 1000, 5000)
   
   gm <- sample(.__gems_[which(.__gems_[, qual]!=""), qual], 1)
-  worth <- floor(abs(rnorm(1, .__gems_val[qual], 2*log(.__gems_val[qual], 10))))
+  worth <- floor(abs(rnorm(1, gems_val[qual], 2*log(gems_val[qual], 10))))
   
-  return( paste(gm, " (", .__gems_qual[qual], ", ", worth, "gp)", sep="") )
+  return( paste(gm, " (", gems_qual[qual], ", ", worth, "gp)", sep="") )
 }
 
 # Jewelry
@@ -104,7 +104,7 @@ gen_jewelry <- function(qual='rand')
   if (qual=='rand') 
     qual <- sample(1:6, size=1, prob=c(.34, .25, .2, .15, .05, .01))
 
-  .__jewelry_qual <- list(
+  jewelry_qual <- list(
     c("steel", "lead", "iron", "zinc", "nickel", "copper"),
     c("cobalt", "bronze", "pewter"),
     c("silver", "hepatizon"),
@@ -113,10 +113,10 @@ gen_jewelry <- function(qual='rand')
     c("mithril", "adamantine", "electrum", "orichalcum")
   )
 
-  .__jewelry_val <- c(2, 8, 32, 128, 512, 2048)
+  jewelry_val <- c(2, 8, 32, 128, 512, 2048)
 
   jewelry_sd <- c(1, 4, 16, 64, 256, 1024)
-  jval <- paste( floor(abs(rnorm(1, .__jewelry_val[qual], jewelry_sd[qual]))), "gp" )
+  jval <- paste( floor(abs(rnorm(1, jewelry_val[qual], jewelry_sd[qual]))), "gp" )
   
   # include gem
   if (sample(1:10, 1) == 10){
@@ -129,7 +129,7 @@ gen_jewelry <- function(qual='rand')
   
   value <- paste("(", jval, plus, gem[length(gem)], ")", sep="")
   
-  return( fixstr( paste( sample(.__jewelry_qual[[qual]], 1), sample(.__jewelry_[, ], 1), addgem, value ) ) )
+  return( fixstr( paste( sample(jewelry_qual[[qual]], 1), sample(.__jewelry_[, ], 1), addgem, value ) ) )
 }
 
 # Potions
