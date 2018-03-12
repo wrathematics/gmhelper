@@ -9,6 +9,7 @@ Imports:
 Version: 2.0.0
 License: BSD 2-clause License + file LICENSE
 ByteCompile: yes
+LazyData: no
 URL: https://github.com/wrathematics/gmhelper
 BugReports: https://github.com/wrathematics/gmhelper/issues
 Author: Drew Schmidt

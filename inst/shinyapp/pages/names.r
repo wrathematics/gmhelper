@@ -63,19 +63,19 @@ names_npc <- function(input)
     race <- input$names_npc_race
     
     if (race=="Human")  
-      name <- lapply(ngen, function(.) gmhelper:::human_name(first=first, middle=middle, last=last, sex=sex) )
+      name <- lapply(ngen, function(.) gmhelper:::name_human(first=first, middle=middle, last=last, sex=sex) )
     else if (race=="Elf")  
-      name <- lapply(ngen, function(.) gmhelper:::elf_name(first=first, middle=middle, last=last, sex=sex) )
+      name <- lapply(ngen, function(.) gmhelper:::name_elf(first=first, middle=middle, last=last, sex=sex) )
     else if (race=="Dwarf")
-      name <- lapply(ngen, function(.) gmhelper:::dwarf_name(first=first, middle=middle, last=last, sex=sex) )
+      name <- lapply(ngen, function(.) gmhelper:::name_dwarf(first=first, middle=middle, last=last, sex=sex) )
     else if (race=="Gnome")
-      name <- lapply(ngen, function(.) gmhelper:::gnome_name(first=first, middle=middle, last=last, sex=sex) )
+      name <- lapply(ngen, function(.) gmhelper:::name_gnome(first=first, middle=middle, last=last, sex=sex) )
     else if (race=="Halfling")
-      name <- lapply(ngen, function(.) gmhelper:::halfling_name(first=first, middle=middle, last=last, sex=sex) )
+      name <- lapply(ngen, function(.) gmhelper:::name_halfling(first=first, middle=middle, last=last, sex=sex) )
     else if (race=="Orc")
-      name <- lapply(ngen, function(.) gmhelper:::orc_name(first=first, middle=middle, last=last) )
+      name <- lapply(ngen, function(.) gmhelper:::name_orc(first=first, middle=middle, last=last) )
     else if (race=="Troll")
-      name <- lapply(ngen, function(.) gmhelper:::troll_name(first=first, middle=middle, last=last) )
+      name <- lapply(ngen, function(.) gmhelper:::name_troll(first=first, middle=middle, last=last) )
     else
       name <- ""
     
@@ -300,4 +300,3 @@ names_society <- function(input)
   
   invisible()
 }
-

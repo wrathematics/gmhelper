@@ -7,7 +7,7 @@ fixstr <- function(str)
   str <- unlist(strsplit(str, " "))
   str <- paste(str[which(str!="")], collapse=" ")
   
-  return( str )
+  str
 }
 
 # currency exchange
@@ -35,6 +35,3 @@ strswap <- function(str, a, b)
   }
   return( paste(strs, collapse="") )
 }
-
-
-

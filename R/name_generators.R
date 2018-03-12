@@ -1,200 +1,226 @@
 # Meta
-char_name <- function(race, first=TRUE, middle=FALSE, last=TRUE, sex='m')
+char_name = function(race, first=TRUE, middle=FALSE, last=TRUE, sex='m')
 {
   if (race=='rand')
-    race <- sample(c("human", "dwarf", "elf", "halfling", "gnome"), 1)
+    race = sample(c("human", "dwarf", "elf", "halfling", "gnome"), 1)
 
   eval(parse(text=paste(race, "_name(", first, ",", middle, ",", last,")", sep="")))
 }
 
-# -------------------------------------------------
-# Humanoids
-# -------------------------------------------------
+
+
+sample_name = function(dataset, col)
+{
+  sample(dataset[which(dataset[, col] != ""), col], 1)
+}
+
+
 
 # internal meta
-.__name_maker <- function(race, sex, last)
+name_maker = function(race, sex, last)
 {
   if (sex=='m' || sex=='M')
-    col <- 2
+    col = 2
   else
-    col <- 3
+    col = 3
   
   if (last==FALSE)
-    fl <- 1
-  else{
-    col <- 5
-    fl <- 4
+    fl = 1
+  else
+  {
+    col = 5
+    fl = 4
   }
   
-  stem1 <- sample(race[which(race[, fl] != ""), fl], 1)
-  stem2 <- sample(race[which(race[, col] != ""), col], 1)
-  name <- paste(stem1, stem2, sep="")
+  stem1 = sample_name(race, fl)
+  stem2 = sample_name(race, col)
+  name = paste(stem1, stem2, sep="")
 
-  return(name)
+  name
 }
+
+
+
+name_barbarian = function()
+{
+  barbarian = gmh_racenames$barbarian
+  
+  f = sample_name(barbarian, 1)
+  l = sample_name(barbarian, 2)
+  
+  fixstr( paste(f, l, sep="") )
+}
+
+
 
 # Human --- names are mixes of real saxon, viking, norman, welsh, and gaelic historical names
-human_name <- function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
+name_human = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
 {
+  human = gmh_racenames$human
+  
   if (sex=='m' || sex=='M')
-    col <- 1
+    col = 1
   else
-    col <- 2
-
+    col = 2
+  
   if (first)
-    f <- as.character(sample(.__human_[which(.__human_[, col] != ""), col], 1))
+    f = sample_name(human, col)
   else
-    f <- ""
+    f = ""
   
   if (middle)
-    m <- as.character(sample(.__human_[which(.__human_[, col] != ""), col], 1))
+    m = sample_name(human, col)
   else
-    m <- ""
+    m = ""
   
   if (last)
-    l <- .__name_maker(.__human_, sex, TRUE)
+    l = name_maker(human, sex, TRUE)
   else
-    l <- ""
+    l = ""
   
-  return( fixstr( paste( f, m, l ) ) )
-}
-
-# Dwarves
-dwarf_name <- function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
-{
-  if (first)
-    f <- .__name_maker(.__dwarf_, sex, FALSE)
-  else
-    f <- ""
-  
-  if (middle)
-    m <- .__name_maker(.__dwarf_, sex, FALSE)
-  else
-    m <- ""
-  
-  if (last)
-    l <- .__name_maker(.__dwarf_, sex, TRUE)
-  else
-    l <- ""
-  
-  return( fixstr( paste( f, m, l ) ) )
-}
-
-# Elves
-elf_name <- function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
-{
-  if (first)
-    f <- .__name_maker(.__elf_, sex, FALSE)
-  else
-    f <- ""
-  
-  if (middle)
-    m <- .__name_maker(.__elf_, sex, FALSE)
-  else
-    m <- ""
-  
-  if (last)
-    l <- .__name_maker(.__elf_, sex, TRUE)
-  else
-    l <- ""
-  
-  return( fixstr( paste( f, m, l ) ) )
-}
-
-# Halfling
-halfling_name <- function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
-{
-  if (first)
-    f <- .__name_maker(.__halfling_, sex, FALSE)
-  else
-    f <- ""
-  
-  if (middle)
-    m <- .__name_maker(.__halfling_, sex, FALSE)
-  else
-    m <- ""
-  
-  if (last)
-    l <- .__name_maker(.__halfling_, sex, TRUE)
-  else
-    l <- ""
-  
-  return( fixstr( paste( f, m, l ) ) )
-}
-
-# Gnomes
-gnome_name <- function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
-{
-  if (first)
-    f <- .__name_maker(.__gnome_, sex, FALSE)
-  else
-    f <- ""
-  
-  if (middle)
-    m <- .__name_maker(.__gnome_, sex, FALSE)
-  else
-    m <- ""
-  
-  if (last)
-    l <- .__name_maker(.__gnome_, sex, TRUE)
-  else
-    l <- ""
-  
-  return( fixstr( paste( f, m, l ) ) )
+  fixstr(paste(f, m, l))
 }
 
 
-# Orcs
-orc_name <- function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
+
+name_dwarf = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
 {
+  dwarf = gmh_racenames$dwarf
+  
   if (first)
-    f <- .__name_maker(.__orc_, sex, FALSE)
+    f = name_maker(dwarf, sex, FALSE)
   else
-    f <- ""
+    f = ""
   
   if (middle)
-    m <- .__name_maker(.__orc_, sex, FALSE)
+    m = name_maker(dwarf, sex, FALSE)
   else
-    m <- ""
+    m = ""
   
   if (last)
-    l <- barbarian_name()
+    l = name_maker(dwarf, sex, TRUE)
   else
-    l <- ""
+    l = ""
   
-  return( fixstr( paste( f, m, l ) ) )
+  fixstr( paste( f, m, l ) )
 }
 
-# Trolls
-troll_name <- function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
+
+
+name_elf = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
 {
+  elf = gmh_racenames$elf
+  
   if (first)
-    f <- .__name_maker(.__troll_, sex, FALSE)
+    f = name_maker(elf, sex, FALSE)
   else
-    f <- ""
+    f = ""
   
   if (middle)
-    m <- .__name_maker(.__troll_, sex, FALSE)
+    m = name_maker(elf, sex, FALSE)
   else
-    m <- ""
+    m = ""
   
   if (last)
-    l <- barbarian_name()
+    l = name_maker(elf, sex, TRUE)
   else
-    l <- ""
+    l = ""
   
-  return( fixstr( paste( f, m, l ) ) )
+  fixstr( paste( f, m, l ) )
 }
 
-# -------------------------------------------------
-# Last names
-# -------------------------------------------------
 
-# Barbarian
-barbarian_name <- function()
+
+name_halfling = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
 {
-  f <- sample(.__barbarian_[, 1], 1)
-  l <- sample(.__barbarian_[which(.__barbarian_[, 2] != ""), 2], 1)
+  halfling = gmh_racenames$halfling
   
-  return( fixstr( paste(f, l, sep="") ) )
+  if (first)
+    f = name_maker(halfling, sex, FALSE)
+  else
+    f = ""
+  
+  if (middle)
+    m = name_maker(halfling, sex, FALSE)
+  else
+    m = ""
+  
+  if (last)
+    l = name_maker(halfling, sex, TRUE)
+  else
+    l = ""
+  
+  fixstr( paste( f, m, l ) )
+}
+
+
+
+name_gnome = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
+{
+  gnome = gmh_racenames$gnome
+  
+  if (first)
+    f = name_maker(gnome, sex, FALSE)
+  else
+    f = ""
+  
+  if (middle)
+    m = name_maker(gnome, sex, FALSE)
+  else
+    m = ""
+  
+  if (last)
+    l = name_maker(gnome, sex, TRUE)
+  else
+    l = ""
+  
+  fixstr( paste( f, m, l ) )
+}
+
+
+
+name_orc = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
+{
+  orc = gmh_racenames$orc
+  
+  if (first)
+    f = name_maker(orc, sex, FALSE)
+  else
+    f = ""
+  
+  if (middle)
+    m = name_maker(orc, sex, FALSE)
+  else
+    m = ""
+  
+  if (last)
+    l = name_barbarian()
+  else
+    l = ""
+  
+  fixstr( paste( f, m, l ) )
+}
+
+
+
+name_troll = function(first=TRUE, middle=FALSE, last=TRUE, sex='m')
+{
+  troll = gmh_racenames$troll
+  
+  if (first)
+    f = name_maker(troll, sex, FALSE)
+  else
+    f = ""
+  
+  if (middle)
+    m = name_maker(troll, sex, FALSE)
+  else
+    m = ""
+  
+  if (last)
+    l = name_barbarian()
+  else
+    l = ""
+  
+  fixstr( paste( f, m, l ) )
 }
