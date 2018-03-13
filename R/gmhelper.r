@@ -1,19 +1,5 @@
 #' gmhelper
 #' 
-#' @importFrom graphics title
-#' @importFrom stats rchisq rnorm runif
-#' @importFrom utils tail
-#' 
-#' @name gmhelper-package
-#' @docType package
-#' @author Drew Schmidt \email{wrathematics AT gmail.com}
-#' @keywords Package
-NULL
-
-
-
-#' gmhelper
-#' 
 #' Run the gmhelper webapp.
 #' 
 #' The app is written in shiny and uses a bunch of internal rollers
