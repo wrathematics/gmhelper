@@ -4,7 +4,7 @@
 #' @importFrom stats rchisq rnorm runif
 #' @importFrom utils tail
 #' 
-#' @name ngram-package
+#' @name gmhelper-package
 #' @docType package
 #' @author Drew Schmidt \email{wrathematics AT gmail.com}
 #' @keywords Package

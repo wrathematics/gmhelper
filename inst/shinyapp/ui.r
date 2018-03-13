@@ -40,8 +40,8 @@ shinyUI(
       tabPanel("About", helpText(about.thisapp)),
       tabPanel("Names", uiOutput("main_names")),
       tabPanel("Loot", uiOutput("main_loot")),
-      tabPanel("Misc", uiOutput("main_misc"))
-      # tabPanel("Roller", uiOutput("main_roller")),
+      tabPanel("Misc", uiOutput("main_misc")),
+      tabPanel("Dice", uiOutput("main_dice"))
       )
     )
   )

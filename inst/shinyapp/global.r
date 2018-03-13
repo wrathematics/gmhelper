@@ -1,4 +1,4 @@
-ngen <- 1:15
+ngen <- 1:15 # number of items to generate
 
 
 
