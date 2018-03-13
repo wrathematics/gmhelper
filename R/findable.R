@@ -8,9 +8,9 @@ gen_map <- function(qual="rand")
   
   cf <- sample(1:2, 1)
   if (cf==1)
-    return( fixstr( paste(sample(map_qual, 1) , "Map of the", dungeon_name(qual=qual)) ) )
+    fixstr(sample(map_qual, 1) , "Map of the", dungeon_name(qual=qual))
   else
-    return( fixstr( paste(sample(map_qual, 1) , "Directions to the", dungeon_name(qual=qual)) ) )
+    fixstr(sample(map_qual, 1) , "Directions to the", dungeon_name(qual=qual))
 }
 
 # Mundane
@@ -19,32 +19,34 @@ gen_mundane <- function(qual="rand")
   if (qual=="rand") 
     qual <- sample(1:5, 1)
   
-  return( fixstr( sample(as.character(.__mundane_[which(as.character(.__mundane_[, qual]) != ""), qual]), 1) ) )
+  fixstr(sample(as.character(.__mundane_[which(as.character(.__mundane_[, qual]) != ""), qual]), 1))
 }
 
 # Food and drink
 gen_food <- function(qual="rand")
 {
   food_qual <- c("rancid", "stale", "palatable", "fresh", "yummy")
-
+  
   if (qual=="rand")
     qual <- sample(1:5, 1)
-
+  
   fq <- food_qual[qual]
   fd <- sample(as.character(unlist(.__food_)), 1)
-  return( fixstr( paste(fq, fd) ) )
+  
+  fixstr(fq, fd)
 }
 
 gen_drink <- function(qual="rand")
 {
   drink_qual <- c("broken", "half empty", "", "fine", "large")
-
+  
   if (qual=="rand")
     qual <- sample(1:5, 1)
-
+  
   dq <- drink_qual[qual]
   dk <- sample(as.character(unlist(.__drink_)), 1)
-  return( fixstr( paste(dq, dk) ) )
+  
+  fixstr(dq, dk)
 }
 
 # Keys
@@ -63,7 +65,7 @@ gen_key <- function(qual="rand")
   
   .__key_size <- c("tiny", "small", "", "large", "enormous")
   
-  return( fixstr( paste(sample(.__key_size, 1), sample(key_qual[[qual]], 1), "key") ) )
+  fixstr(sample(.__key_size, 1), sample(key_qual[[qual]], 1), "key")
 }
 
 # Money
@@ -71,17 +73,15 @@ gen_money <- function(qual='rand')
 {
   if (qual=='rand') 
     qual <- sample(1:6, size=1, prob=c(.1, .25, .3, .15, .15, .05))
-
+  
   .__money_ <- c("", "cp", "sp", "ep", "gp", "pp")
-
+  
   mn_sd <- c(1, 125, 100, 75, 50, 25)
-
+  
   if (qual > 1)
-    mn <- paste( floor(abs(rnorm(1, 10, mn_sd[qual])))+1, .__money_[qual] )
+    mn <- paste(floor(abs(rnorm(1, 10, mn_sd[qual])))+1, .__money_[qual])
   else 
-    mn <- paste( sample(1:7, 1), "pieces of fools gold" )
-
-  return( mn )
+    mn <- paste(sample(1:7, 1), "pieces of fools gold")
 }
 
 gen_gems <- function(qual='rand')
@@ -95,7 +95,7 @@ gen_gems <- function(qual='rand')
   gm <- sample(.__gems_[which(.__gems_[, qual]!=""), qual], 1)
   worth <- floor(abs(rnorm(1, gems_val[qual], 2*log(gems_val[qual], 10))))
   
-  return( paste(gm, " (", gems_qual[qual], ", ", worth, "gp)", sep="") )
+  paste(gm, " (", gems_qual[qual], ", ", worth, "gp)", sep="")
 }
 
 # Jewelry
@@ -119,17 +119,18 @@ gen_jewelry <- function(qual='rand')
   jval <- paste( floor(abs(rnorm(1, jewelry_val[qual], jewelry_sd[qual]))), "gp" )
   
   # include gem
-  if (sample(1:10, 1) == 10){
+  if (sample(1:10, 1) == 10)
+  {
     gem <-  unlist(strsplit(unlist(strsplit(unlist(strsplit(gen_gems(qual=qual), split="[(]")), split=",")), split="[)]"))
     addgem <- paste("inset with small", gem[1])
     plus <- "+"
-  } else {
+  } 
+  else
     gem <- addgem <- plus <- ""
-  }
   
   value <- paste("(", jval, plus, gem[length(gem)], ")", sep="")
   
-  return( fixstr( paste( sample(jewelry_qual[[qual]], 1), sample(.__jewelry_[, ], 1), addgem, value ) ) )
+  fixstr(sample(jewelry_qual[[qual]], 1), sample(.__jewelry_[, ], 1), addgem, value )
 }
 
 # Potions
@@ -140,7 +141,7 @@ gen_potions <- function(qual='rand')
 
   pt <- sample(as.character(.__potions_[which(as.character(.__potions_[, qual]) != ""), qual]), 1)
   
-  return( fixstr( paste("Potion of", pt ) ) )
+  fixstr("Potion of", pt)
 }
 
 # Potion generator
@@ -153,11 +154,13 @@ gen_pot_desc <- function(qual='rand', label='rand', labellang='rand', extra='ran
   if (labellang=='rand')
     labellang <- as.character(sample(.__pot_desc_[which(.__pot_desc_[, 4]!=""), 4], 1))
   
-  if (label=='None'){
+  if (label=='None')
+  {
     cf <- sample(1:2, size=1, prob=c(.2, .8))
     if (cf==1)
       potion <- "DRINK ME"
-    else {
+    else
+    {
       potion <- 'None'
       labellang <- "NA"
     }
@@ -185,28 +188,32 @@ gen_pot_desc <- function(qual='rand', label='rand', labellang='rand', extra='ran
   extrarow <- which(.__pot_desc_[, 6]==extra)
   # extra dice rolling
   test <- unlist(strsplit(extra, "DICE"))
-  if (length(test)>1){
+  if (length(test)>1)
+  {
     dice <- unlist(strsplit(as.character(.__pot_desc_[extrarow, 8]), "d"))
     dice <- die(dice[1], dice[2])
     extra <- paste(test[1], dice, test[2])
   }
+  
   # extra colors
   test <- unlist(strsplit(extra, "COLOR"))
-  if (length(test)>1){
+  if (length(test)>1)
+  {
     color2 <- unlist(strsplit(as.character(.__pot_desc_[extrarow, 1]), "d"))
-    if (color2=='var'){
+    if (color2=='var')
       color <- "Varies; see 'Extra'"
-      
-    }
-    else {
+    else
+    {
       color2 <- as.character(sample(.__pot_desc_[which(.__pot_desc_[, 5]!=""), 5], 1))
       extra <- strswap(extra, "COLOR", color2)
-      if (length(unlist(strsplit(extra, "MAINCOL")))>1){
+      if (length(unlist(strsplit(extra, "MAINCOL")))>1)
+      {
         extra <- strswap(extra, "MAINCOL", color)
         color <- "Special; see 'Extra'"
       }
     }
   }
+  
   # smell
   test <- unlist(strsplit(extra, "SMELL"))
   if (length(test)>1){
@@ -215,7 +222,7 @@ gen_pot_desc <- function(qual='rand', label='rand', labellang='rand', extra='ran
   }
   
   
-  return( fixstr( paste("Label:\t\t\t\t", potion, "\nLabel Language:\t", labellang, "\nLabel Accuracy:\t\t", label, actual, "\nColor:\t\t\t\t", color, "\nTaste:\t\t\t\t", taste, "\nContainer:\t\t\t", container, "\nExtra:\t\t\t\t", extra, sep="") ) )
+  fixstr(paste("Label:\t\t\t\t", potion, "\nLabel Language:\t", labellang, "\nLabel Accuracy:\t\t", label, actual, "\nColor:\t\t\t\t", color, "\nTaste:\t\t\t\t", taste, "\nContainer:\t\t\t", container, "\nExtra:\t\t\t\t", extra, sep=""))
 }
 
 

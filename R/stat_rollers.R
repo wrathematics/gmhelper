@@ -10,7 +10,8 @@ m.ii <- function(.)
     test <- sum(sample(1:6, size=3, replace=TRUE))
     if (out[i] < test) out[i] <- test
   }
-  return(sort(out))
+  
+  sort(out)
 }
 
 m.iii <- function(.)
@@ -19,7 +20,8 @@ m.iii <- function(.)
   for (i in 1:6){
     out[i] <- sum(sample(1:6, size=3, replace=TRUE))
   }
-  return(sort(out))
+  
+  sort(out)
 }
 
 m.iv <- function(.)
@@ -28,7 +30,8 @@ m.iv <- function(.)
   for (i in 1:12){
     out[i] <- sum(sample(1:6, size=3, replace=TRUE))
   }
-  return(sort(tail(sort(out), 6)))
+  
+  sort(tail(sort(out), 6))
 }
 
 m.v <- function(.)
@@ -37,7 +40,8 @@ m.v <- function(.)
   for(i in 1:6){
     out[i] <- sum(tail(sort(sample(1:6, size=4, replace=TRUE)), 3))
   }
-  return(sort(out))
+  
+  sort(out)
 }
 
 
@@ -56,18 +60,17 @@ m.vi <- function(.)
     
     if (i > 6 || j > 7) break
   }
-  return(sort(stats))
+  
+  sort(stats)
 }
+
+
 
 # ---------------------------------
 # PO:S&P Methods
 # ---------------------------------
 
-# vii
-m.vii <- function(.)
-{
-  return(75/6)
-}
+# vii is point buy, so we ignore it
 
 # viii
 # depends on distribution of dice:
@@ -76,10 +79,10 @@ m.viii <- function(k)
   dist <- list(c(4,4,4,4,4,4), c(5,4,4,4,4,3), c(5,5,4,4,3,3), c(5,5,5,3,3,3), c(6,4,4,4,3,3), c(6,5,4,3,3,3), c(6,6,3,3,3,3))
   
   stats <- numeric(6)
-  for (i in 1:6){
+  for (i in 1:6)
     stats[i] <- sum(tail(sort(sample(1:6, size=dist[[k]][i], replace=TRUE)), 3))
-  }
-  return(sort(stats))
+  
+  sort(stats)
 }
 
 # ix
@@ -98,7 +101,8 @@ m.5d6 <- function(.)
   for(i in 1:6){
     out[i] <- sum(tail(sort(sample(1:6, size=5, replace=TRUE)), 3))
   }
-  return(sort(out))
+  
+  sort(out)
 }
 
 # ---------------------------------
@@ -110,7 +114,3 @@ stats_roller <- list(
   snp=list(m.vii, m.vii, m.ix), 
   other=list(m.5d6)
 )
-
-
-
-

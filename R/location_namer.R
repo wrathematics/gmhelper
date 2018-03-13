@@ -22,13 +22,15 @@ adventure_name <- function()
   that <- c("Shades of", "Temple of")
   tfwqual <- c("Eldrich", "Sunless", "Ancient", "Black", "White", "Elder", "Dark", "Crimson", "Bloody", "Shadowy", "Golden")
   feelwhen <- c("Sorrows", "Nightmares", "Ruin", "Insanity", "Shadow", "Evil", "Secrets", "Ages", "Death", "Madness", "Annihilation", "Chaos", "Doom", "Dread", "Woe", "Suffering", "Horror", "Gloom", "Devestation", "Sorrow", "Terror", "Malice")
-
-  if (wh==1){
+  
+  if (wh==1)
+  {
     first <- sample(c(firstname, either), 1)
     last <- sample(people, 1)
     out <- paste("The", first, "the", last)
   } 
-  else if (wh==2){
+  else if (wh==2)
+  {
     first  <- sample(c(firstplace, either), 1)
     adj <- sample(adj, 1)
     place <- sample(places, 1)
@@ -39,14 +41,15 @@ adventure_name <- function()
       name <- ""
     out <- paste(first, "the", adj, place, name)
   } 
-  else {
+  else
+  {
     first <- sample(that, 1)
     qual <- sample(tfwqual, 1)
     feel <- sample(feelwhen, 1)
     out <- paste(first, "the", qual, feel)
   }
-
-  return( fixstr( out ) )
+  
+  fixstr(out)
 }
 
 # -------------------------------------------------
@@ -57,16 +60,16 @@ dungeon_name <- function(qual=NA)
 {
   # Data
   qualifier <- c("", "Ruined ", "Forsaken ", "Dread ", "Dark ", "Lost ", "Secret ", "Forsaken ", "Black ", "Sinister ", "Fiendish ")
-
+  
   type <- c("Keep", "Castle", "City", "Cliffs", "Fane", "Cave", "Island", "Room", "Undercity", "Delve", "Lair", "Tunnels", "Hive", "Chambers", "Shrine", "Vaults", "Catacombs", "Dungeon", "Crypt", "Prison", "Sepulcher", "Tomb", "Tower", "Pit", "Caverns", "Barrow", "Halls", "Warrens", "Temple", "Labyrinth", "Sanctum")
-
+  
   feeltype <- c("", "Unending", "Treacherous", "Ghastly", "Dismal", "Mighty", "Profane", "Elemental", "Baleful", "Dire", "Deranged", "Bloody", "Unearthly", "Unimaginable", "Demonic", "Dire", "Infernal", "Gloomy")
   feel <- c("Doom", "Dread", "Woe", "Suffering", "Horror", "Gloom", "Devestation", "Sorrow", "Terror", "Malice")
-
+  
   vagueowner <- c("Sorrows", "Nightmares", "Ruin", "Insanity", "Shadow", "Evil", "Secrets", "Ages", "Death", "Madness", "Annihilation", "Chaos")
-
+  
   owner_qualifier <- c("", "Eldrich", "Sunless", "Ancient", "Black", "White", "Elder", "Dark", "Crimson", "Bloody", "Shadow", "Golden")
-
+  
   owner1 <- list(
     o1 <- c("Souls", "Worms"),
     o2 <- c("Horror", "Forgotten Goddess"),
@@ -74,7 +77,7 @@ dungeon_name <- function(qual=NA)
     o4 <- c("Dragon"),
     o5 <- c("Elder God")
   )
-
+  
   owner2 <- list(
     o1 <- c("Goblin", "Orc", "Dwarven", "Swordmaster"),
     o2 <- c("Giant"),
@@ -82,32 +85,35 @@ dungeon_name <- function(qual=NA)
     o4 <- c("Lich"),
     o5 <- c('Devil', 'God', 'Tarrasque')
   )
-
+  
   owner_post_qualifier <- c("", " Lunatic", " Dutchess", " Warlord", " Lady", " Emperor", " Archmage", " Count", " Duke", " Earl", " Prince", " Princess", " Countess", " Queen", " Lord", " King", " Knight", " Mage", " Baron")
-
+  
   # Function
   x1 <- paste(samp(qualifier), samp(type), sep="")
-
+  
   f_v_o <- sample(1:3, size=1)
   if (f_v_o==1)
     x2 <- paste(samp(feeltype), " ", samp(feel), sep="") else
   if (f_v_o==2)
     x2 <- samp(vagueowner) 
-  else {
+  else
+  {
     cf <- sample(1:2, size=1)
-    if (cf==1) {
+    if (cf==1)
+    {
       owner <- owner1
       owner_post_qualifier <- ""
-    } else if (cf==2) {
-      owner <- owner2
     }
+    else if (cf==2) 
+      owner <- owner2
+    
     if (is.na(qual))
       x2 <- paste("the ", samp(owner_qualifier), " ", samp(unlist(samp(owner))), samp(owner_post_qualifier), sep="")
     else
       x2 <- paste("the ", samp(owner_qualifier), " ", samp(owner[[qual]]), samp(owner_post_qualifier), sep="")
   }
-
-  return( fixstr( paste(x1, "of", x2) ) )
+  
+  fixstr(x1, "of", x2)
 }
 
 # -------------------------------------------------
@@ -137,10 +143,13 @@ tavern_name <- function(tavern='rand', inn='rand')
   
   cf <- sample(1:2, 1)
   
-  if (cf==1){
+  if (cf==1)
+  {
     adj <- sample(.__tavern_[which(.__tavern_[, 1] != ""), 1], 1)
     noun1 <- ""
-  } else {
+  }
+  else
+  {
     adj <- ""
     noun1 <- paste(sample(.__tavern_[which(.__tavern_[, 2] != ""), 2], 1), "and")
   }
@@ -150,7 +159,7 @@ tavern_name <- function(tavern='rand', inn='rand')
   
   name <- paste( "The", adj, noun1, noun2, type, and, pinn )
   
-  return( fixstr( name ) )
+  fixstr(name)
 }
 
 # -------------------------------------------------
@@ -173,5 +182,5 @@ town_name <- function(race='rand')
   stem1 <- sample(.__town_[which(.__town_[, 2*(race-1)+1] != ""), 2*(race-1)+1], 1)
   stem2 <- sample(.__town_[which(.__town_[, 2*(race-1)+2] != ""), 2*(race-1)+2], 1)
   
-  return( fixstr( paste( stem1, stem2, sep="") ) )
+  fixstr(stem1, stem2, sep="")
 }
