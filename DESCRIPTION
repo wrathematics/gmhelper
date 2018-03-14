@@ -1,11 +1,13 @@
 Package: gmhelper
 Title: Random Rolls for Game Masters
 Description: GM Helper.
+Depends: R (>= 3.1.0)
 Imports:
     graphics,
     stats,
     utils,
-    shiny
+    shiny (>= 1.0.5),
+    ggplot2 (>= 2.2.1)
 Version: 2.0.0
 License: BSD 2-clause License + file LICENSE
 ByteCompile: yes
