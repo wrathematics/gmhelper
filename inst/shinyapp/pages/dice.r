@@ -38,16 +38,31 @@ output$dice_roller_basic_ui <- renderUI({
 dice_roller_basic = function(input)
 {
   observeEvent(input$dice_button_basic_roll, {
+    accum = input$dice_accum
+    
     d = as.integer(sub(input$dice_d, pattern="^d", replacement=""))
     res = roll(1, d)
     
-    if (input$dice_accum)
+    if (accum)
     {
+      old = localstate$dice_roller_basic_accum
+      localstate$dice_roller_basic_accum = c(old, res)
+      res = sum(old) + res
       
-      res = as.integer(localstate$dice_roller_basic) + res
+      resf = paste(
+        paste(cumsum(old), collapse="<br/>"), 
+        "<br/>",
+        paste("<font size=55>", res, "</font>"))
+    }
+    else
+    {
+      if (!accum && d == 20 && (res == 1 || res == 20))
+        resf = paste("<font size=55 color='red'>", res, "</font>")
+      else
+        resf = paste("<font size=55>", res, "</font>")
     }
     
-    localstate$dice_roller_basic = HTML(paste(res))
+    localstate$dice_roller_basic = HTML(resf)
   })
   
   invisible()
