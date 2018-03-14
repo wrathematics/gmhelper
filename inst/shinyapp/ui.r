@@ -14,15 +14,6 @@ about.thisapp <- HTML("
   even roll a die and look up the result in a table, there's
   the GM Helper.
   </p>
-  
-  <p style='font-size:120%;'>
-  The generators are written in R, and the web framework is 
-  written in shiny.  The source code for each is available
-  here 
-  <a href='https://github.com/wrathematics/gmhelper'>
-  https://github.com/wrathematics/gmhelper
-  </a>.
-  </p>
 ")
 
 
