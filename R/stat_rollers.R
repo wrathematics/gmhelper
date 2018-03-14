@@ -104,13 +104,3 @@ m.5d6 <- function(.)
   
   sort(out)
 }
-
-# ---------------------------------
-# meta
-# ---------------------------------
-
-stats_roller <- list(
-  phb=list(m.ii, m.iii, m.iv, m.v, m.vi), 
-  snp=list(m.vii, m.vii, m.ix), 
-  other=list(m.5d6)
-)
