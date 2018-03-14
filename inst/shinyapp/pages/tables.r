@@ -2,7 +2,9 @@ opts = list(
   pageLength = -1,
   searching=FALSE,
   scroller=TRUE,
-  lengthChange=FALSE
+  lengthChange=FALSE,
+  info=FALSE,
+  paginate=FALSE
 )
 
 
