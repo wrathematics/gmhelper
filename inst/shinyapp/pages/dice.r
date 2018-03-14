@@ -5,15 +5,16 @@ roll = function(n, d) sum(sample(d, size=n, replace=TRUE))
 output$main_dice <- renderUI({
   mainPanel(
     tabsetPanel(
-      tabPanel("Basic", uiOutput("dice_roller_ui")),
-      tabPanel("Advanced", uiOutput("dice_roller_advanced_ui"))
+      tabPanel("Basic", uiOutput("dice_roller_basic_ui")),
+      tabPanel("Advanced", uiOutput("dice_roller_advanced_ui")),
+      tabPanel("Scatter", uiOutput("dice_roller_scatter_ui"))
     )
   )
 })
 
 
 
-output$dice_roller_ui <- renderUI({
+output$dice_roller_basic_ui <- renderUI({
   list(
     sidebarLayout(
       sidebarPanel(
@@ -25,7 +26,7 @@ output$dice_roller_ui <- renderUI({
       
       mainPanel(
         renderUI({
-          localstate$dice_roller
+          localstate$dice_roller_basic
         })
       )
     )
@@ -34,7 +35,7 @@ output$dice_roller_ui <- renderUI({
 
 
 
-dice_roller = function(input)
+dice_roller_basic = function(input)
 {
   observeEvent(input$dice_button_basic_roll, {
     d = as.integer(sub(input$dice_d, pattern="^d", replacement=""))
@@ -43,10 +44,10 @@ dice_roller = function(input)
     if (input$dice_accum)
     {
       
-      res = as.integer(localstate$dice_roller) + res
+      res = as.integer(localstate$dice_roller_basic) + res
     }
     
-    localstate$dice_roller = HTML(paste(res))
+    localstate$dice_roller_basic = HTML(paste(res))
   })
   
   invisible()
@@ -135,6 +136,35 @@ dice_roller_advanced = function(input)
     
     reset_dice()
     localstate$dice_roller_advanced = HTML(res)
+  })
+  
+  invisible()
+}
+
+
+
+output$dice_roller_scatter_ui <- renderUI({
+  list(
+    sidebarLayout(
+      sidebarPanel(
+        actionButton("dice_button_scatter_roll", "Roll!")
+      ),
+      
+      mainPanel(
+        renderPlot({
+          localstate$dice_roller_scatter
+        })
+      )
+    )
+  )
+})
+
+
+
+dice_roller_scatter = function(input)
+{
+  observeEvent(input$dice_button_scatter_roll, {
+    localstate$dice_roller_scatter = gmhelper:::roll_scatter()
   })
   
   invisible()

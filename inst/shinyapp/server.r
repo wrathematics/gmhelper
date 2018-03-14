@@ -25,6 +25,7 @@ shinyServer(function(input, output, session){
   
   misc_crits(input)
   
-  dice_roller(input)
+  dice_roller_basic(input)
   dice_roller_advanced(input)
+  dice_roller_scatter(input)
 })
