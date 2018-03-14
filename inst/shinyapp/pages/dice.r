@@ -6,7 +6,7 @@ output$main_dice <- renderUI({
   mainPanel(
     tabsetPanel(
       tabPanel("Basic", uiOutput("dice_roller_basic_ui")),
-      tabPanel("Advanced", uiOutput("dice_roller_advanced_ui")),
+      # tabPanel("Advanced", uiOutput("dice_roller_advanced_ui")),
       tabPanel("Scatter", uiOutput("dice_roller_scatter_ui"))
     )
   )
