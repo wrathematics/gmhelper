@@ -3,8 +3,9 @@ char_name = function(race, first=TRUE, middle=FALSE, last=TRUE, sex='m')
 {
   if (race=='rand')
     race = sample(c("human", "dwarf", "elf", "halfling", "gnome"), 1)
-
-  eval(parse(text=paste(race, "_name(", first, ",", middle, ",", last,")", sep="")))
+  
+  fun = eval(parse(text=paste0("name_", race)))
+  fun(first, middle, last)
 }
 
 
