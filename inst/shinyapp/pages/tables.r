@@ -9,11 +9,20 @@ opts = list(
 
 
 
+tables_about <- HTML("
+  <p>
+  This is a collection of tables for use with OSR games. The prices should be
+  largely compatible with OSRIC.
+  </p>
+")
+
 output$main_tables <- renderUI({
   mainPanel(
     tabsetPanel(
-      tabPanel("Services", uiOutput("tables_services_ui")),
-      tabPanel("Henchmen", uiOutput("tables_henchmen_ui"))
+      
+      tabPanel("About", helpText(tables_about)),
+      tabPanel("Henchmen", uiOutput("tables_henchmen_ui")),
+      tabPanel("Services", uiOutput("tables_services_ui"))
     )
   )
 })

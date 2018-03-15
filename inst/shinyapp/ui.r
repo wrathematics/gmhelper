@@ -1,9 +1,9 @@
 library(shiny)
 
 
-about.thisapp <- HTML("
+about <- HTML("
   <center>
-  <img src='img.jpg' style='height:300px'>
+  <img src='img.jpg'>
   </center>
 ")
 
@@ -19,7 +19,7 @@ shinyUI(
       windowTitle="GM Helper", id="nav_tag", 
       inverse=TRUE, collapsible=FALSE, 
       
-      tabPanel("About", helpText(about.thisapp)),
+      tabPanel("About", helpText(about)),
       tabPanel("Names", uiOutput("main_names")),
       tabPanel("Loot", uiOutput("main_loot")),
       tabPanel("Misc", uiOutput("main_misc")),
