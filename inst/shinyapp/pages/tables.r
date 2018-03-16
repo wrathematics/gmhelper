@@ -22,7 +22,8 @@ output$main_tables <- renderUI({
       
       tabPanel("About", helpText(tables_about)),
       tabPanel("Henchmen", uiOutput("tables_henchmen_ui")),
-      tabPanel("Services", uiOutput("tables_services_ui"))
+      tabPanel("Services", uiOutput("tables_services_ui")),
+      tabPanel("Weapons", uiOutput("tables_weapons_ui"))
     )
   )
 })
@@ -75,6 +76,36 @@ output$tables_henchmen_ui = renderUI({
             Hirelings=henchmen$hirelings,
             Mercenaries=henchmen$mercenaries,
             Shipmen=henchmen$shipmen
+          )
+        })
+      )
+    )
+  )
+})
+
+
+
+weapons = gmhelper:::gmh_weapons
+
+output$tables_weapons_ui = renderUI({
+  list(
+    sidebarLayout(
+      sidebarPanel(
+        radioButtons(inputId="tables_weapons_radio", label="Weapons",
+        c("Ammo", "Bladed", "Hafted", "Misc", "Missile", "Pole", "Siege"),
+        inline=FALSE)
+      ),
+      
+      mainPanel(
+        renderDataTable(options=opts, {
+          switch(input$tables_weapons_radio,
+            Ammo=weapons$ammo,
+            Bladed=weapons$bladed,
+            Hafted=weapons$hafted,
+            Misc=weapons$misc,
+            Missile=weapons$missile,
+            Pole=weapons$pole,
+            Siege=weapons$siege
           )
         })
       )
