@@ -56,6 +56,7 @@ dice_roller_basic = function(input)
     }
     else
     {
+      localstate$dice_roller_basic_accum = NULL
       if (!accum && d == 20 && (res == 1 || res == 20))
         resf = paste("<font size=55 color='red'>", res, "</font>")
       else
