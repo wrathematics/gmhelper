@@ -1,0 +1,13 @@
+"Siege"	"Cost"	"Weight"	"Damage"	"Crew"	"ROF"	"Thac0"
+"Ballista (Heavy)"	"800 gp"	300	"3d10"	4	"1/16"	17
+"Ballista (Medium)"	"600 gp"	250	"3d6"	2	"1/12"	14
+"Ballista (Light)"	"400 gp"	100	"2d6"	1	"1/8"	12
+"Bombard"	"1200 gp"	600	"2d10"	3	"1/15"	17
+"Bombard (Great)"	"2400 gp"	1200	"3d10"	5	"1/18"	19
+"Cannon (Heavy)"	"60,000 gp"	2000	"5d12"	6	"1/30"	17
+"Cannon (Medium)"	"25,000 gp"	1000	"5d12"	4	"1/18"	14
+"Cannon (Light)"	"15,000 gp"	400	"5d12"	3	"1/15"	12
+"Catapult (Heavy)"	"1000 gp"	1000	"3d10"	5	"1/16"	16
+"Catapult (Medium)"	"700 gp"	400	"3d10"	3	"1/12"	15
+"Catapult (Light)"	"500 gp"	250	"2d10"	1	"1/8"	14
+"Trebuchet"	"1400 gp"	1000	"4d10"	8	"1/16"	17

@@ -1,0 +1,24 @@
+"Missile"	"Cost"	"Weight"	"SM"	"L"
+"Arquebus"	"500 gp"	10	"1d10"	"1d10"
+"Blowgun"	"10 gp"	2		
+"Blunderbus"	"500 gp"	12	"1d4"	"1d4"
+"Composite Long Bow"	"100 gp"	3		
+"Composite Short Bow"	"75 gp"	2		
+"Bow (Daiku)"	"100 gp"	3		
+"Bow (Long)"	"75 gp"	3		
+"Bow (Short)"	"30 gp"	2		
+"Crossbow (Hand)"	"300 gp"	3		
+"Crossbow (Heavy)"	"50 gp"	14		
+"Crossbow (Light)"	"35 gp"	7		
+"Crossbow (Medium)"	"40 gp"	8.5		
+"Throwing Dart"	"5 sp"	0.5	"1d3"	"1d2"
+"Harpoon"	"20 gp"	5	"1d4+1"	"1d6+1"
+"Javelin"	"5 sp"	2	"1d4"	"1d4"
+"Javelin (Stone)"	"5 cp"	2	"1d4"	"1d4"
+"Shuriken (spike, large)"	"5 sp"	0.2	"1d4"	"1d3"
+"Shuriken (spike, small)"	"3 sp"	0.1	"1d3"	"1d3"
+"Shuriken (star, large)"	"8 sp"	0.3	"1d6"	"1d4"
+"Shuriken (star, small)"	"5 sp"	0.2	"1d4"	"1d4"
+"Sling"	"5 cp"	0.1		
+"Staff Sling"	"2 sp"	2		
+"Throwing Axe"	"1 gp"	5	"1d6"	"1d4"

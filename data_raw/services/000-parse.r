@@ -1,6 +1,6 @@
 root = "~/dev/gmhelper/"
 data_root = paste0(root, "/data/")
-setwd(paste0(root, "/data_raw/data/services"))
+setwd(paste0(root, "/data_raw/services"))
 
 reader = function(f) read.csv(f, sep="\t", header=TRUE, stringsAsFactors=FALSE)
 

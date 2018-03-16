@@ -1,0 +1,35 @@
+"Ammo"	"Cost"	"Weight"	"SM"	"L"
+"Arrow (Barbed)"	"1 sp"	0.2	"1d6"	"1d6"
+"Arrow (Broad-head)"	"1 sp"	0.2	"1d6+1"	"1d6"
+"Arrow (Blunt-head)"	"1 cp"	0.2	"1d3"	"1d3"
+"Arrow (Daikyu)"	"5 bp"	0.2	"1d8"	"1d6"
+"Arrow (Corded - 120'cord)"	"6 gp"	2.5	"1d3"	"1d2"
+"Arrow (Flaming)"	"5 gp"	0.4	"1d6+1"	"2d4"
+"Arrow (Flight)"	"25 bp"	0.1	"1d6"	"1d6"
+"    dozen"	"3 sp"	1.2		
+"Arrow (Frog crotch)"	"1 sp"	0.2	"1d6"	"1d3"
+"Arrow (Grappling - 120'cord)"	"10 gp"	3	"1d4"	"1d3"
+"Arrow (Humming bulb)"	"2 sp"	0.2	"1d2"	"1d2"
+"Arrow (Normal)"	"1 cp"	0.2	"1d6"	"1d6"
+"    dozen"	"1 sp"	2.4		
+"Arrow (Sheaf)"	"5 cp"	0.1	"1d8"	"1d8"
+"    dozen"	"6 sp"	1.2		
+"Arrow (Silver)"	"1 gp"	0.2	"1d6"	"1d6"
+"Arrow (Spiral)"	"1 gp"	0.2	"1d6+1"	"1d6+1"
+"Arrow (Stone)"	"2 bp"	0.1	"1d4"	"1d4"
+"    dozen"	"3 cp"	1.2		
+"Arrow (Wooden)"	"5 bp"	0.2	"1d5"	"1d3"
+"Blowgun Needle"	"2 cp"	0.1	"1"	"1"
+"Blowgun Needle (barbed)"	"1 sp"	0.1	"1d2"	"1d2"
+"Quarrel (or Bolt), Hand, Single"	"1 gp"	0.1	"1d6"	"1d6"
+"    score"	"20 gp"	2		
+"Quarrel (or Bolt), Heavy, Single"	"1 sp"	0.1	"1d12"	"1d12"
+"    score"	"2 gp"	2	0	0
+"Quarrel (or Bolt), Light, Single"	"1 sp"	0.1	"1d8"	"1d8"
+"    score"	"2 gp"	2	0	0
+"Quarrel (or Bolt), Medium, Single"	"1 sp"	0.1	"1d10"	"1d10"
+"    score"	"2 gp"	2	0	0
+"Sling Bullet (Single)"	"1 cp"	0.2	"1d4+1"	"1d4+1"
+"    score"	"2 sp"	4	0	0
+"Sling Stone (Single)"	0	0.2	"1d4"	"1d4"
+"    score"	0	4	0	0
