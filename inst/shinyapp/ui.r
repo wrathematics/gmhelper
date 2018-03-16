@@ -24,6 +24,7 @@ shinyUI(
       tabPanel("Loot", uiOutput("main_loot")),
       tabPanel("Misc", uiOutput("main_misc")),
       tabPanel("Dice", uiOutput("main_dice")),
+      tabPanel("Cards", uiOutput("main_cards")),
       tabPanel("Tables", uiOutput("main_tables"))
       )
     )
