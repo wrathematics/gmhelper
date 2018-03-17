@@ -4,6 +4,13 @@ library(shiny)
 about <- HTML("
   <center>
   <img src='img.jpg'>
+  
+  <br><br>
+  <p>
+  Some content, particularly the tables, are used under the
+  <a href='http://www.opengamingfoundation.org/ogl.html'>Open Gaming License</a>.
+  </p>
+  
   </center>
 ")
 
