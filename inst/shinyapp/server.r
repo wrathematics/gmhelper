@@ -30,4 +30,5 @@ shinyServer(function(input, output, session){
   dice_roller_scatter(input)
   
   cards_tarot_draw(input)
+  cards_playing_draw(input)
 })
