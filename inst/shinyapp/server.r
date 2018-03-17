@@ -31,4 +31,5 @@ shinyServer(function(input, output, session){
   
   cards_tarot_draw(input)
   cards_playing_draw(input)
+  cards_domt_draw(input)
 })
